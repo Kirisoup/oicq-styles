@@ -1,6 +1,6 @@
 body {
         --bg_bottom_standard: #000 !important;
-        --bg_list_alt: #f383 !important;
+        --bg_list_alt: #302 !important;
         --bg_list_alt_2: #f384 !important;
         --theme1: #f38;
         --theme2: #78ff81;
@@ -415,7 +415,7 @@ body {
                         position: relative !important;                        
                         width: calc(100% + 1rem - 2ch) !important;
                         
-                        &::before {
+                        &::after {
                                 content: "";
                                 position: absolute;
                                 inset: 0;
@@ -425,19 +425,24 @@ body {
                                 box-sizing: border-box !important;
                         }
                         
-                        &:nth-child(odd)::before {
-                                background-color: var(--bg_list_alt) !important;
+                        &:nth-child(odd)::after {
+                                background-color: var(--bg_list_alt);
+                        }
+                        
+                        .list-item__content {
+                                z-index: 10;
+
+                                .list-item__title {
+                                        .main-info * {
+                                                color: var(--theme1) !important;
+                                        }
+        
+                                        .secondary-info * {
+                                                color: var(--theme2) !important;
+                                        }
+                                }
                         }
 
-                        .list-item__title {
-                                .main-info * {
-                                        color: var(--theme1) !important;
-                                }
-
-                                .secondary-info * {
-                                        color: var(--theme2) !important;
-                                }
-                        }
                 }
 
                 &.recent-contact-item--top {
